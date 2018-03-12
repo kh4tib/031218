@@ -1,0 +1,200 @@
+// Background Map
+$work-item-backgrounds: (
+    1: url(https://images.unsplash.com/photo-1515102597191-fe409fca9804?ixlib=rb-0.3.5&s=d7111886f5634f0fc2b10accc9083d1c&auto=format&fit=crop&w=1950&q=80) center center / cover no-repeat,
+
+    2: url(https://images.unsplash.com/photo-1520861569356-79e8f8f5b56a?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=187e9a99425c1fe7a84a22b86306a0d0&auto=format&fit=crop&w=1938&q=80) center center / cover no-repeat,
+
+    3: url(https://images.unsplash.com/photo-1520861384246-4c14be48db90?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=0e3c01ea66dc702ce7a162a44176fce4&auto=format&fit=crop&w=2134&q=80) center center / cover no-repeat,
+
+    4: url(https://images.unsplash.com/photo-1517950908067-2d4181c93e31?ixlib=rb-0.3.5&s=48d5b80a6539209126cbc96793319429&auto=format&fit=crop&w=2133&q=80) center center / cover no-repeat,
+
+    5: url(https://images.unsplash.com/photo-1515104221747-62798aee90c4?ixlib=rb-0.3.5&s=23d10320c52c6b99c12de9cbf68e78b0&auto=format&fit=crop&w=2134&q=80) center center / cover no-repeat,
+
+    6: url(https://images.unsplash.com/photo-1514926239779-5d5019ec302b?ixlib=rb-0.3.5&s=8311409e9daebc9f33578d1ccedac1d4&auto=format&fit=crop&w=2134&q=80) center center / cover no-repeat,
+
+    7: url(https://images.unsplash.com/photo-1514843295067-dc777a28a510?ixlib=rb-0.3.5&s=f393da61ea8a4e2f734438407be9afa8&auto=format&fit=crop&w=2134&q=80) center center / cover no-repeat,
+
+    8: url(https://images.unsplash.com/photo-1513912909943-53aac2542cc5?ixlib=rb-0.3.5&s=fc17348c3c80e4033a3777de4ad02dce&auto=format&fit=crop&w=1950&q=80) center center / cover no-repeat,
+
+    9: url(https://images.unsplash.com/photo-1513178065262-3722f6eeceaf?ixlib=rb-0.3.5&s=e5782b28a92649f7a8a5e6cce29649b4&auto=format&fit=crop&w=1950&q=80) center center / cover no-repeat,
+
+    10: url(https://images.unsplash.com/photo-1507812984078-917a274065be?ixlib=rb-0.3.5&s=532b09adcab3e4d55440138609ce666a&auto=format&fit=crop&w=2000&q=80) center center / cover no-repeat,
+
+    11: url(https://images.unsplash.com/photo-1489672418683-2aa4c82a8c4d?ixlib=rb-0.3.5&s=72ffa706cdf2dba1b2842fad26a64ce6&auto=format&fit=crop&w=2134&q=80) center center / cover no-repeat,
+
+    12: url(https://images.unsplash.com/photo-1488085061387-422e29b40080?ixlib=rb-0.3.5&s=922a501b878a1d38d294b73b183ee103&auto=format&fit=crop&w=2089&q=80) center center / cover no-repeat,
+);
+// Global Styles
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    font-family: 'Roboto Condensed', sans-serif;
+}
+a {
+    text-decoration: none;
+    color: #000;
+    cursor: pointer;
+}
+
+.main-section {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    background: url(https://images.unsplash.com/photo-1513178065262-3722f6eeceaf?ixlib=rb-0.3.5&s=e5782b28a92649f7a8a5e6cce29649b4&auto=format&fit=crop&w=1950&q=80) center center / cover no-repeat;
+    display: flex;
+    align-items: center;
+}
+
+.main-content {
+    width: 100%;
+    height: 90%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header, 
+footer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    nav {
+        a {
+            font-size: .7rem;
+            text-transform: uppercase;
+            letter-spacing: 1rem;
+            margin: 1rem;
+            text-align: center;
+            color: #fff;
+        }
+    }
+}
+
+.main-information {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: #fff;
+    
+    &-title {
+        font-family: 'Monoton', cursive;
+        font-size: 10rem;   
+        text-transform: lowercase;  
+    }
+
+    &-subtitle {
+        font-size: .7rem;
+        text-transform: uppercase;
+        letter-spacing: 1rem;
+        text-align: center;
+    }
+}
+.section-seperator {
+    width: 100%;
+    height: 20%;
+    font-size: .7rem;
+    text-transform: uppercase;
+    letter-spacing: 1rem;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+}
+
+.work-section {
+    width: 100%;
+    height: 80%;
+    display: grid;
+    grid-template-rows: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: .8rem;
+}
+
+.work-item {
+    background: aquamarine;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    @each $work-item-background in map-keys($work-item-backgrounds) {
+        &.work-item-#{$work-item-background} {
+            background: map-get($work-item-backgrounds, $work-item-background);
+            transition: 300ms ease-in-out;
+            
+            &:hover {
+                background-position: top right;
+                
+                .play-button {
+                    transform: scale(1.2);
+                }
+            }
+        }
+    }
+
+    .play-button {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 2rem;
+        background: rgba(0, 0, 0, 0.5);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        transition: 300ms ease-in-out;
+        
+        svg {
+            fill: #fff;
+            vertical-align: middle;
+        }
+    }
+}
+
+// Media Queries
+
+@media only screen and (max-width: 768px) {
+    .work-section {
+        display: grid;
+        grid-template-rows: repeat(6, 25%);
+        grid-template-columns: repeat(2, 1fr);
+        grid-gap: .8rem;
+    }
+
+    header, footer {
+        width: 75%;
+        nav {
+            display: flex;
+            flex-direction: column;
+            flex-wrap: wrap;
+            
+            a {
+                margin: .5rem 0;
+            }
+        }
+    }
+
+    .main-information {
+        width: 75%;
+
+        &-title {
+            font-size: 4rem;
+        }
+    }
+}
+
+@media only screen and (max-width: 480px) {
+    .work-section {
+        display: grid;
+        grid-template-rows: repeat(12, 50%);
+        grid-template-columns: repeat(1, 1fr);
+        grid-gap: .8rem;
+    }
+}
